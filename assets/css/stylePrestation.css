@@ -1,0 +1,1435 @@
+@font-face {
+  font-family: montSerrat;
+  src: url("../font/Montserrat-Regular.ttf");
+  
+} 
+
+*{
+  font-family: montSerrat;
+}
+
+a{
+  text-decoration:none!important;
+}
+
+body{
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overscroll-behavior-y: contain;
+}
+
+#burgerSectionDroite{
+  background-image: url("../img/toa-heftiba-FV3GConVSss-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: 50%;
+  animation: loading-slide 10s linear infinite alternate;
+ }
+
+
+ #burgerSectionGauche,#burgerSectionDroite{
+  transform: translateY(-100%);
+  transition: all 0.5s ease-out;
+  transition-delay: 0.5s;
+
+}
+
+#burgerSectionDroite > div:nth-child(1){
+  mix-blend-mode: multiply; 
+  background:rgb(0, 0, 0);
+  height: 60%;
+ }
+
+ #burgerSectionDroite > div:nth-child(2){
+  height: 40%;
+  background-color: black;
+ }
+
+ #burgerSectionDroite > div:nth-child(2) > p{
+  font-size: 2.5vmin;
+  padding:0 3vmin
+ }
+
+ #burgerSectionDroite > div:nth-child(2) > div:nth-child(2){
+  height: 0.2vmin;
+  width: 15vmin;
+  margin: 2vmin 0;
+
+ }
+
+ #burgerSectionDroite > div:nth-child(2) > div:nth-child(3){
+  font-size: 1.5vmin;
+ }
+
+ 
+ #burgerSectionGauche.open,#burgerSectionDroite.open{
+   transform: translateY(0)!important;
+   transition: all 0.5s ease-out;
+ }
+
+ .titreSectionDroite{
+   font-size: 10vmin;
+ }
+
+ @keyframes loading-slide {
+  from {
+    background-position: left;
+  }
+  to {
+    background-position: right;
+  }
+}
+#menuBurgerDesktop{
+  height: 100vh;
+  top:0;
+  width: 100%;
+  z-index: -1;
+}
+
+.childBurger{
+  margin: 3vmin 0 3vmin 0!important;
+}
+
+.cd__digit {
+	width: 1ch;
+	z-index: -1;
+  position: relative;
+}
+
+.digits{
+  display: flex;
+  justify-content: center;
+  height: 6vmin;
+  font-weight: bold;
+  overflow: hidden;
+  margin-bottom: 1.5vmin!important;
+  z-index: 3;
+}
+.digitAdresse{
+  height:3.2vmin!important
+}
+
+.reseauAccueil{
+  transition: transform 0.5s ease-out;
+  font-size:3.5vmin
+}
+
+
+
+.digitsReseau{
+  display: flex;
+  justify-content: center;
+  height: 7vmin;
+  padding: 0 2vmin;
+  font-weight: bold;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.arrowBurger{
+  transform: translateX(-4.5vmin);
+  letter-spacing: 2vmin;
+  transition: transform 0.3s linear;
+  
+  opacity: 0;
+  transition: opacity 0.5s linear;
+}
+
+.ancreBurger, .lien{
+  cursor: pointer;
+}
+
+
+.ancreBurger:hover .arrowBurger{
+  opacity: 1;
+  transform: translateX(0px);
+  transition: transform 0.3s linear;
+  transition: opacity 0.5s linear;
+}
+
+
+.ancreBurger{
+  transform: translateX(-7.80vmin);
+  transition: transform 0.3s linear;
+ 
+}
+
+.ancreBurger:hover{
+  transform: translateX(2vmin);
+  transition: all 0.3s linear;
+}
+
+
+.unit{
+  font-size: 6vmin;
+	line-height: 4;
+	width: 3ch;
+  transition: all 0.5s ease-in;
+}
+
+.unit.apparition{
+  line-height: 1;
+  transition: line-height 0.5s ease-in;
+  transition-delay: 0.5s;
+}
+
+.burger {
+  background-color: rgb(255, 255, 255);
+  box-shadow: none;
+  border: none;
+  position: fixed;
+  cursor: pointer;
+  top:0%;
+  right:0%;
+  z-index: 3!important;
+  height: 6vmin;
+  width: 7vmin;
+  padding: 0 4vmin;
+}
+
+.burger span {
+  width: 5vmin;
+  height: 0.5vmin;
+  background-color: rgb(0, 0, 0);
+  border-radius: 15vmin;
+}
+
+.burger span:nth-child(1) {
+  top: 0;
+  transform: translateX(0%) translateY(0);
+  transition: top 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87) 0.3s, transform 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87);
+}
+
+.burger span:nth-child(2) {
+  top: 1.2vmin;
+  opacity: 1;
+  transform: translateX(0%);
+  margin:0.8vmin 0!important
+}
+
+.burger span:last-child {
+  top: 2.4vmin;
+  transform: translateX(0%) translateY(0);
+  transition: top 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87) 0.3s, transform 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87);
+}
+
+.burger.open span:nth-child(1) {
+  top: 50%;
+  transform: translateX(0%) translateY(250%) rotate(45deg);
+  transition: top 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87), transform 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87) 0.3s;
+}
+
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open span:last-child {
+  top: 50%;
+  transform: translateX(0%) translateY(-250%) rotate(-45deg);
+  transition: bottom 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87), transform 0.3s cubic-bezier(0.21, 0.83, 0.26, 0.87) 0.3s;
+}
+
+
+
+.divChargement0{
+    animation: chargementDiv 0.4s linear forwards;
+   
+  }
+  
+  .divChargement1{
+    animation: chargementDiv 0.4s linear forwards;
+    animation-delay: 0.4s;
+  }
+  
+  .divChargement2{
+    animation: chargementDiv 0.4s linear forwards;
+    animation-delay: 0.8s;
+  }
+  @keyframes chargementDiv {
+    from{
+      width: 100%;
+    }
+  
+    to{
+      width: 0%;
+    }
+  }
+
+  .digitContact{
+    font-size: 3.2vmin!important;
+  }
+
+  .divChargementDepart0{
+    animation: chargementDive 0.3s linear forwards;
+  }
+  
+  .divChargementDepart1{
+    animation: chargementDive 0.3s linear forwards;
+    animation-delay: 0.2s;
+  }
+  
+  .divChargementDepart2{
+    animation: chargementDive 0.3s linear forwards;
+    animation-delay: 0.5s;
+  }
+  @keyframes chargementDive {
+    from{
+      width: 0;
+    }
+  
+    to{
+      width: 100%;
+    }
+  }
+
+  #divId{
+    width: 100%; 
+    height: 33.35vh; 
+    background-color: black; 
+    position: absolute; 
+    z-index: 4;
+    overflow: hidden;
+    text-overflow: ellipsis ellipsis!important;
+  }
+  
+  .divIdDepart{
+    width: 0%;
+     height: 33.35vh;
+      background-color:black; 
+       position:fixed; 
+        z-index: 4;
+  }
+  
+  
+  
+  aside > div:nth-child(1){
+    top: 0;
+  }
+  
+  aside > div:nth-child(2){
+    top: 33.35%;
+  }
+  
+  aside > div:nth-child(3){
+    top: 66.70%;
+  }
+
+  section{
+    display: flex;
+    overflow: hidden;
+  }
+
+.slideContainer2>div:nth-child(2n){
+  background-color: #101010;
+  padding: 0 13vmin;
+  color: white;
+}
+
+.box, .box2{
+  width: 100%;
+    height:100%;
+    background-size: cover;
+}
+
+
+
+.slideContainer2>div:nth-child(3){
+  background-image: url("../img/prestationRefonte.webp");
+}
+
+.slideContainer2>div:nth-child(5){
+  background-image: url("../img/prestationCommerce.webp");
+}
+
+
+
+.slideContainer1,.slideContainer2{
+  width: 50%;
+  height: 100vh;
+  will-change: transform!important; 
+}
+
+.slideContainer1>div:nth-child(1){
+  background-image: url("../img/prestationOptimisation.webp");
+  background-position-y: 100%;
+}
+
+.slideContainer1>div:nth-child(2){
+  background-color: rgb(255, 255, 255);
+  background-position-y: 10%
+}
+
+.slideContainer1>div:nth-child(3){
+  background-image: url("../img/prestationVitrine.webp");
+}
+.slideContainer1>div:nth-child(4){
+  background-color: rgb(255, 255, 255);
+  padding: 0 13vmin;
+}
+.slideContainer1>div:nth-child(5){
+  background-image: url("../img/prestationGraphisme.webp");
+  background-position-x: 60% ;
+}
+.slideContainer1>div:nth-child(6){
+  background-color: rgb(255, 255, 255);
+  padding: 0 13vmin;
+}
+.slideContainer1>div:nth-child(7){
+  background-image: url("../img/prestationOptimisation.webp");
+  background-position-y: 100%;
+}
+
+.slideContainer1>div:nth-child(8){
+  background-color: rgb(255, 255, 255);
+}
+
+.box2 > h3, .box>h3{
+  font-size: 10vmin;
+}
+
+.box2 > p, .box > p {
+  font-size: 2.7vmin;
+  margin-top: 4vmin;
+}
+
+.pad{
+  padding: 0 13vmin;
+}
+
+.nom,.nomPage{
+  font-size: 10vmin;
+  color: white;
+  font-weight: bold;
+white-space: nowrap!important;
+}
+
+.titrePrincipale{
+  font-size: 12vmin;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.margTitle{
+  margin-bottom: 15.2vmin!important;
+}
+
+.margeTitle{
+  margin-bottom: -6.9vmin!important;
+}
+
+.paraPresta{
+  padding: 7vmin 10vmin;
+  font-size: 1.7vmin;
+}
+
+.imgPresta{
+  width: 17%;
+  position: absolute;
+
+}
+
+
+
+.box>.imgPresta:nth-child(2){
+  top:70%;
+  right:3%;
+  transition: transform 0.2s linear;
+  
+}
+
+.box>.imgPresta:nth-child(3){
+  top:50%;
+  left:48%;
+  transition: transform 0.4s linear;
+}
+
+.box>.imgPresta:nth-child(4){
+  top:10%;
+  left:37%;
+  transition: transform 0.6s linear;
+}
+
+.box2>.imgPresta:nth-child(5){
+  top:50%;
+  left:30%;
+  transition: transform 0.8s linear;
+}
+
+.box2>.imgPresta:nth-child(3){
+  top:20%;
+  left:50%;
+  transition: transform 0.5s linear;
+}
+
+.box2>.imgPresta:nth-child(4){
+  top:20%;
+  left:3%;
+  transition: transform 1s linear;
+}
+
+.blockMob > div > div:nth-child(2) > span {
+  font-size: 7vmin;
+}
+
+.mobileSec{
+  padding: 2vmin 0;
+}
+
+@media screen and (max-width: 330px) {
+  /*IPhone portrait and smaller. You can probably stop on 320px*/
+  .blockMob{
+    height: 70vmin!important;
+    margin-right: 10.5vmin!important;
+  }
+
+
+
+  .blog{
+    height: 70vmin!important;
+  }
+
+  .enfantSec{
+    padding:10vh 0 11vh 0!important
+  }
+
+  .affichProp img{
+    width: 23%!important;
+  }
+
+  .affichProp>div h3{
+    font-size: 5.5vmin!important;
+  }
+
+
+
+  .affichProp>div p{
+    font-size: 3.3vmin!important;
+  }
+
+#fantome{
+  height: 70vmin;
+}
+
+ }
+
+
+
+
+@media (min-width: 576px) and (max-width: 767.99px) {
+
+
+  .affichProp img{
+    width: 20%!important;
+  }
+
+  .affichProp>div h3{
+    font-size: 5vmin!important;
+  }
+
+  .affichProp>div{
+    margin-top: 10vmin!important;
+  }
+
+  .affichProp>div a{
+    font-size: 3vmin!important;
+  }
+
+
+
+
+
+  #menuBurgerDesktop{
+    height: calc(var(--vh, 1vh) * 100);
+    top:0;
+    width: 100%;
+    z-index: -1;
+    
+  }
+
+  .propriete img{
+    width: 40%!important;
+  }
+
+  .propriete>span{
+    font-size: 5.5vmin!important;
+  }
+
+  .plus{
+    font-size: 10vmin!important;
+  }
+
+
+
+  .affichProp>div p{
+    font-size: 3vmin!important;
+  }
+ 
+
+  .politique{
+    font-size: 3vmin;
+    text-align: center;
+    margin-top: 3vmin;
+    margin-bottom: 1.5vmin;
+  }
+  
+  .politique > div:nth-child(2){
+    height: 0.4vmin;
+    width: 50%;
+    background-color: black;
+    margin: 1.5vmin 0;
+  }
+
+  .politique a{
+    color: black!important;
+  }
+
+
+  .reseauAccueil{
+    font-size: 7vmin!important;
+ 
+  }
+
+  .h-button{
+    width: 100%!important;
+    padding: 4vmin 0;
+    margin-top: 6vmin;
+    position: relative;
+    font-size: 5vmin!important;
+
+  }
+  
+  .h-button:before {
+    top:5%!important
+  }
+  
+  .h-button:hover span, .h-button:focus span {
+  
+    transform: translate(0, -3.5vmin)!important;
+  }
+  
+  .unitTel,.unitTele{
+    margin-top: 5vmin;
+  }
+
+  .unitTele{
+    margin-bottom: 2vmin;
+  }
+  
+
+  .digitContact{
+   font-size: 6vmin!important
+  }
+ 
+  .digitAdresse{
+    height: 7vmin!important;
+    margin-bottom: 0.4vmin!important;
+  }
+
+  .lienBurger,.lienAccueil{
+    font-size: 8vmin!important;
+  }
+
+  .digits{
+    height: 8vmin!important;
+  }
+
+  .childBurger{
+    margin-top: 10vmin!important;
+  }
+
+
+
+
+
+
+
+
+  .burger span:nth-child(2) {
+    margin: 1vmin 8vmin 1vmin 0 !important;
+  }
+
+.burger span{
+  width: 7vmin;
+  height: 0.5vmin;
+  background-color: white;
+  margin-right: 8vmin;
+}
+
+
+
+.burger{
+  width: 10vmin;
+  height: 10vmin;
+  background-color: initial;
+}
+
+
+
+  
+
+  .mobileSec{
+    /*height: 100vh;*/
+    width: 100vw;
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  .enfantSec{
+    height: 100%;
+  
+  }
+
+  .ligne{
+    width: 80%;
+    height: 0.5vmin;
+    background-color: white;
+    margin-top: 2vmin;
+    
+    
+  }
+
+  .blockMob{
+    width: 50vmin;
+    height: 60vmin;
+    background-color: violet;
+    margin-right: 10.4vmin;
+    border-radius: 10vmin;
+    transition: all 0.1s linear;
+    position:initial;
+   
+  }
+
+  #fantome{
+    height: 60vmin;
+    width: 50vmin;
+    margin:15vmin 0;
+  }
+
+  .second{
+    display: none;
+  }
+
+  .autre{
+    display: flex;
+    transition: none;
+  }
+
+  .contenu{
+    position: static;
+    height: 100vh!important;
+    width: 101vw!important;
+    border-radius: 0;
+    /*transition: all 5s linear*/;
+    
+    
+  }
+
+
+
+
+  .blog{
+    width: 50vmin;
+    height: 60vmin;
+    position:absolute;
+    top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+margin: auto auto;
+  }
+
+  .parentContenu{
+    margin:auto auto;
+    height: 100vh!important;
+    width: 100vw!important;
+    transition:all 0.1s linear!important;
+    
+  }
+
+  .contenuMarge{
+    top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+margin: auto;
+    transition: all 0.1s linear!important;
+  }
+
+  .propriete{
+    display: flex;
+  }
+
+
+
+  .affichProp{
+    display: none;
+    padding-top: 4%;
+  }
+}
+
+
+@media (max-width: 575.99px) {
+
+  #menuBurgerDesktop{
+    height: calc(var(--vh, 1vh) * 100);
+    top:0;
+    width: 100%;
+    z-index: -1;
+    
+  }
+
+
+  .politique{
+    font-size: 3vmin;
+    text-align: center;
+    margin-top: 3vmin;
+    margin-bottom: 1.5vmin;
+  }
+  
+  .politique > div:nth-child(2){
+    height: 0.4vmin;
+    width: 50%;
+    background-color: black;
+    margin: 1.5vmin 0;
+  }
+
+  .politique a{
+    color: black!important;
+  }
+
+
+  .reseauAccueil{
+    font-size: 7vmin!important;
+ 
+  }
+
+  .h-button{
+    width: 100%!important;
+    padding: 4vmin 0;
+    margin-top: 6vmin;
+    position: relative;
+    font-size: 5vmin!important;
+
+  }
+  
+  .h-button:before {
+    top:5%!important
+  }
+  
+  .h-button:hover span, .h-button:focus span {
+  
+    transform: translate(0, -3.5vmin)!important;
+  }
+  
+  .unitTel,.unitTele{
+    margin-top: 5vmin;
+  }
+
+  .unitTele{
+    margin-bottom: 2vmin;
+  }
+  
+
+  .digitContact{
+   font-size: 6vmin!important
+  }
+ 
+  .digitAdresse{
+    height: 7vmin!important;
+    margin-bottom: 0.4vmin!important;
+  }
+
+  .lienBurger,.lienAccueil{
+    font-size: 8vmin!important;
+  }
+
+  .digits{
+    height: 8vmin!important;
+  }
+
+  .childBurger{
+    margin-top: 10vmin!important;
+  }
+
+
+
+
+
+
+
+
+  .burger span:nth-child(2) {
+    margin: 1.5vmin 12vmin 1.5vmin 0 !important;
+  }
+
+.burger span{
+  width: 10vmin;
+  height: 1vmin;
+  background-color: white;
+  margin-right: 12vmin;
+}
+
+
+
+.burger{
+  width: 10vmin;
+  height: 10vmin;
+  background-color: initial;
+  margin-top: 3vmin;
+}
+
+
+
+  
+
+  .mobileSec{
+    /*height: 100vh;*/
+    width: 100vw;
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  .enfantSec{
+    height: 100%;
+  
+  }
+
+  .ligne{
+    width: 80%;
+    height: 0.5vmin;
+    background-color: white;
+    margin-top: 2vmin;
+    
+    
+  }
+
+  .blockMob{
+    width: 70vmin;
+    height: 90vmin;
+    background-color: violet;
+    margin-right: 10.4vmin;
+    border-radius: 10vmin;
+    transition: all 0.1s linear;
+    position:initial;
+   
+  }
+
+  #fantome{
+    height: 90vmin;
+    width: 70vmin;
+    margin:15vmin 0;
+  }
+
+  .second{
+    display: none;
+  }
+
+  .autre{
+    display: flex;
+    transition: none;
+  }
+
+  .contenu{
+    position: static;
+    height: 100vh!important;
+    width: 101vw!important;
+    border-radius: 0;
+    /*transition: all 5s linear*/;
+    
+    
+  }
+
+
+
+
+  .blog{
+    width: 70vmin;
+    height: 90vmin;
+    position:absolute;
+    top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+margin: auto auto;
+  }
+
+  .parentContenu{
+    margin:auto auto;
+    height: 100vh!important;
+    width: 100vw!important;
+    transition:all 0.1s linear!important;
+    
+  }
+
+  .contenuMarge{
+    top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+margin: auto;
+    transition: all 0.1s linear!important;
+  }
+
+  .propriete{
+    display: flex;
+  }
+
+
+
+  .affichProp{
+    display: none;
+    padding-top: 4%;
+  }
+
+  /*.enfantSec{
+    padding:9vh 0 13vh 0
+  }*/
+}
+
+
+
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+  #menuBurgerDesktop{
+    height: calc(var(--vh, 1vh) * 100);
+    top:0;
+    width: 100%;
+    z-index: -1;
+    
+  }
+
+
+  .politique{
+    font-size: 3vmin;
+    text-align: center;
+    margin-top: 3vmin;
+    margin-bottom: 1.5vmin;
+  }
+  
+  .politique > div:nth-child(2){
+    height: 0.4vmin;
+    width: 50%;
+    background-color: black;
+    margin: 1.5vmin 0;
+  }
+
+  .politique a{
+    color: black!important;
+  }
+
+
+  .reseauAccueil{
+    font-size: 7vmin!important;
+ 
+  }
+
+  .h-button{
+    width: 100%!important;
+    padding: 4vmin 0;
+    margin-top: 6vmin;
+    position: relative;
+    font-size: 5vmin!important;
+
+  }
+  
+  .h-button:before {
+    top:5%!important
+  }
+  
+  .h-button:hover span, .h-button:focus span {
+  
+    transform: translate(0, -3.5vmin)!important;
+  }
+  
+  .unitTel,.unitTele{
+    margin-top: 5vmin;
+  }
+
+  .unitTele{
+    margin-bottom: 2vmin;
+  }
+  
+
+  .digitContact{
+   font-size: 6vmin!important
+  }
+ 
+  .digitAdresse{
+    height: 7vmin!important;
+    margin-bottom: 0.4vmin!important;
+  }
+
+  .lienBurger,.lienAccueil{
+    font-size: 8vmin!important;
+  }
+
+  .digits{
+    height: 8vmin!important;
+  }
+
+  .childBurger{
+    margin-top: 10vmin!important;
+  }
+
+
+
+
+
+
+
+
+  .burger span:nth-child(2) {
+    margin: 1.3vmin 12vmin 1.3vmin 0 !important;
+  }
+
+.burger span{
+  width: 9vmin;
+  height: 0.8vmin;
+  background-color: white;
+  margin-right: 12vmin;
+}
+
+
+
+.burger{
+  width: 10vmin;
+  height: 10vmin;
+  background-color: initial;
+  margin-top: 0.5vmin;
+}
+
+
+
+
+  .affichProp img{
+    width: 20%!important;
+  }
+
+  .affichProp>div h3{
+    font-size: 5vmin!important;
+  }
+
+  .affichProp>div{
+    margin-top: 10vmin!important;
+  }
+
+  .affichProp>div a{
+    font-size: 3vmin!important;
+  }
+
+
+#fantome{
+  width: 50vmin!important;
+  height: 52vmin!important;
+  margin:15vmin 0
+}
+
+
+.blockMob>div>div img{
+  width: 40%;
+}
+
+.blockMob>div>div:nth-child(2)>span{
+  font-size: 5vmin;
+}
+.plus{
+  font-size: 8vmin!important;
+}
+  .mobileSec{
+   
+    width: 100vw;
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  .enfantSec{
+    height: 100%;
+  
+  }
+
+  .ligne{
+    width: 80%;
+    height: 0.5vmin;
+    background-color: white;
+    margin-top: 2vmin;
+    
+    
+  }
+
+  .blockMob{
+    width: 50vmin;
+    height: 52vmin;
+
+    margin-right: 10.4vmin;
+    border-radius: 10vmin;
+    transition: all 0.1s linear;
+    position:initial;
+   
+  }
+
+
+  .second{
+    display: none;
+  }
+
+  .autre{
+    display: flex;
+  }
+
+  .contenu{
+    position: static;
+    height: 100vh!important;
+    width: 101vw!important;
+    border-radius: 0;
+  
+   
+    
+  }
+
+
+
+  .blog{
+    width: 50vmin;
+    height: 52vmin;
+    
+    position:absolute;
+    top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+margin: auto auto;
+
+  }
+
+
+  .parentContenu{
+    margin:auto auto;
+    height: 100vh!important;
+    width: 100vw!important;
+    transition:all 0.1s linear!important;
+    
+  }
+
+  .contenuMarge{
+    top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+margin: auto;
+    transition: all 0.1s linear!important;
+  }
+
+  .propriete{
+    display: flex;
+  }
+
+  .titleP{
+    font-size: clamp(5px,8vmin,8vmin);
+  }
+
+
+  .affichProp{
+    display: none;
+    padding-top: 4%;
+  }
+
+  .enfantSec{
+    padding:6vmin 0 10vmin 0
+  }
+
+  
+}
+
+
+
+@media only screen and (min-device-width: 480px) 
+                   and (max-device-width:927px) 
+                   and (orientation: landscape) {
+
+                    .affichProp{
+                      display: none;
+                    }
+
+                    .mobileSec{
+                      height: 100vh;
+                     
+                    }
+
+                    .enfantSec{
+                      height: 100%;
+                    }
+
+
+                    .titleP{
+                      font-size: 5vmin!important;
+                    }
+
+                  
+
+
+
+                    .blog{
+                      width: 100%;
+                      height: 45vmin;
+                      
+                    }
+
+                 
+
+                    .propriete{
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: center;
+                      align-items: center;
+                    }
+
+                    .affichProp{
+                      padding-top: 0;
+                    }
+
+                    .affichProp>div{
+                      margin-top: 5vmin!important;
+                  
+                    }
+
+                 .affichProp>div>h3{
+                   font-size: 4vmin!important;
+                   
+                 }
+
+                 .affichProp>div>a{
+                  font-size: 3.5vmin!important;
+                  z-index: 8!important;
+                  position: fixed;
+                }
+
+
+                 .affichProp>div>p{
+                  font-size: 3vmin!important;
+                }
+
+
+
+                    .affichProp{
+                      position: absolute;
+                      z-index: 6;
+                    }
+
+                   
+                    .parentBlock{
+                      position: initial;
+                    }
+
+                    .blockMob{
+                      width: 34vmin;
+                      height: 45vmin;
+                      margin-right: 5vmin;
+                      border-radius: 10vmin;
+                      transition: all 0.1s linear;
+                      position:initial;
+                     
+                    }
+
+                    .plus{
+                      pointer-events: visible;
+                   
+                        font-size: 8vmin!important;
+                    
+                    }
+
+
+                    .autre{
+                      transform: translateX(0)!important;
+                      pointer-events: none;
+                      display: flex;
+                      justify-content: center;
+                      width: 100%;
+                      transition: none!important;
+                    }
+                    
+
+                    .contenu{
+                      position: absolute;
+                      z-index: 1!important;
+                      margin-right: 0!important;
+                      border-radius: 0;
+                    
+                    }
+
+                    .propriete>span{
+                      font-size: 3vmin!important;
+                    }
+
+                    .ligne{
+                      margin-top: 0;
+                    }
+
+                    .rond{
+                      margin-right: 2%!important;
+                      display: none;
+                    }
+
+                  
+                    
+                  
+                    .blockMob>div>div:nth-child(3)>img{
+                      width: 10%!important;
+                      
+                    }
+                    
+}
+
+
+
+
+
+
+@media only screen and (min-device-width: 350px) 
+                   and (max-device-width:650px) 
+                   and (orientation: landscape) {
+
+                    .rond{
+                      display: none;
+                    }
+                   
+                    .blog{
+                      margin: 6vmin 0;
+                      margin:auto auto;
+                    }
+
+                    #fantome{
+                      margin:3vmin 0
+                    }
+
+                    .parentContenu{
+                      margin:auto auto;
+                      height: 100vh!important;
+                      width: 100vw!important;
+                      transition:all 0.1s linear!important;
+                      position: absolute;
+                    }
+
+                    .blockMob{
+
+                      height: 41vmin;
+                      margin-right: 2.5vmin;
+                      width: 32vmin;
+                    }
+
+                    .plus{
+                      margin-top: 7%!important;
+                      margin-right: 10%!important;
+                    }
+
+                    .contenu{
+                      height: 100vh;
+                      width: 100vw;
+                      position: absolute;
+                      
+                    }
+
+                   }
